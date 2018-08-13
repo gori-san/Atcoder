@@ -9,21 +9,17 @@
 using namespace std;
 
 int main(){
-	int d;
-	long long int g;
-	cin >> d >> g;
-	int p[d];
-	long long int c[d];
-	REP(i,d){
-		cin >> p[i] >> c[i];
-	}
-	int min = 1000, score;
-	REP(i,d){
-		score = p[i]*(i+1)*100+c[i];
-		if(min > p[i]){
-			if(score )
+	int n;
+	cin >> n;
+	int sum = 0, s = 1, c = 1, m = 1;
+	long long int ans = 0;
+	while(sum != n){
+		if(n % 2*c != 0){
+			ans += s;
+			sum += m;
 		}
+		
 	}
 
-	return 0;
 }
+

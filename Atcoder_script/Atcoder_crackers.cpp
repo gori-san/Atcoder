@@ -9,21 +9,16 @@
 using namespace std;
 
 int main(){
-	int d;
-	long long int g;
-	cin >> d >> g;
-	int p[d];
-	long long int c[d];
-	REP(i,d){
-		cin >> p[i] >> c[i];
+	int n, k;
+	cin >> n >> k;
+	if(n == 0){
+		cout << 0 << endl;
+		return 0;
 	}
-	int min = 1000, score;
-	REP(i,d){
-		score = p[i]*(i+1)*100+c[i];
-		if(min > p[i]){
-			if(score )
-		}
+	if(n < k || n%k != 0){
+		cout << 1 << endl;
+	}else{
+		cout << 0 << endl;
 	}
-
 	return 0;
 }

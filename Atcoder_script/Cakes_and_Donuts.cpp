@@ -9,21 +9,21 @@
 using namespace std;
 
 int main(){
-	int d;
-	long long int g;
-	cin >> d >> g;
-	int p[d];
-	long long int c[d];
-	REP(i,d){
-		cin >> p[i] >> c[i];
+	int n;
+	cin >> n;
+	int sum = 0;
+	if(n < 4){
+		cout << "No" << endl;
+		return 0;
 	}
-	int min = 1000, score;
-	REP(i,d){
-		score = p[i]*(i+1)*100+c[i];
-		if(min > p[i]){
-			if(score )
+	REP(i,25){
+		REP(j,15){
+			if(4*i + 7*j == n){
+				cout << "Yes" << endl;
+				return 0;
+			}else if(4*i + 7*j > n) break;
 		}
 	}
-
+	cout << "No" << endl;
 	return 0;
 }
