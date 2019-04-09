@@ -7,11 +7,11 @@
 #define REP1(i,n) FOR(i,1,n)
 
 using namespace std;
-int count = 0;
+int _count = 0;
 
 void Calc(int n, int a, int b, int k){
 	if(k == 0){
-		count++;
+		_count++;
 		return;
 	}else if(n == 0){
 		return;
@@ -26,6 +26,6 @@ int main(){
 	int n, a, b, k, ans;
 	cin >> n >> a >> b >> k;
 	Calc(n, a, b, k);
-	cout << count << endl;
+	cout << _count << endl;
 	return 0;
 }
