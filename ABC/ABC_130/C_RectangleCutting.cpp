@@ -13,11 +13,10 @@ int main()
 {
     int w, h, x, y;
     cin >> w >> h >> x >> y;
-    float ans = float(w * h) / 2;
     cout << fixed << setprecision(10);
     if (x * 2 == w && y * 2 == h)
-        cout << ans << ' ' << 1 << endl;
+        cout << 1.0 * w * h / 2 << ' ' << 1 << endl;
     else
-        cout << ans << ' ' << 0 << endl;
+        cout << 1.0 * w * h / 2 << ' ' << 0 << endl;
     return 0;
 }
