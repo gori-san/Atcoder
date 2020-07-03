@@ -4,6 +4,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include <deque>
 #define ll long long int
 #define FOR(i, a, b) for (ll i = (ll)(a); i < (ll)(b); i++)
 #define REP(i, n) FOR(i, 0, n)
@@ -12,14 +13,40 @@
 using namespace std;
 
 int main() {
-    int a, b;
-    cin >> a >> b;
-    REP1(i, 1099) {
-        if (int(i * 0.08) != a || int(i * 0.1) != b)
+    string s;
+    deque<string> deq;
+    int q;
+    cin >> s >> q;
+    deq.push_front(s);
+    int head_flag = 1;
+    int query1, query2;
+    string query3;
+    REP(i, q) {
+        cin >> query1;
+        if (query1 == 1) {
+            head_flag *= -1;
             continue;
-        cout << i << endl;
-        return 0;
+        }
+        cin >> query2 >> query3;
+        if (query2 == 1) {
+            if (head_flag == 1) {
+                deq.push_front(query3);
+            } else {
+                deq.push_back(query3);
+            }
+        } else {
+            if (head_flag == 1) {
+                deq.push_back(query3);
+            } else {
+                deq.push_front(query3);
+            }
+        }
     }
-    cout << -1 << endl;
+    if (head_flag == -1)
+        reverse(deq.begin(), deq.end());
+    REP(i, deq.size()) {
+        cout << deq[i];
+    }
+    cout << endl;
     return 0;
 }
